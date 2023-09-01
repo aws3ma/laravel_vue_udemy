@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\TestController;
+use App\Http\Controllers\HomeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,16 +13,5 @@ use App\Http\Controllers\TestController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-    // try {
-    //     DB::connection()->getPdo();
-    //     echo 'worked';
-    // } catch (\Exception $e) {
-    //     die("twerked" . $e);
-    // }
-});
-Route::get('/helloWorld/{id}',function($id) {
-    echo 'hello world '.$id;
-});
-Route::get('test',[TestController::class, 'test1']);
+Route::get('/',[HomeController::class, 'index']);
+Route::get('/page/{id}',[HomeController::class, 'page']);
