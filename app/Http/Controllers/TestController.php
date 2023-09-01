@@ -9,8 +9,9 @@ class TestController extends Controller
     public function test1(){
         // echo 'test';
         $pages = page::where('id',1)->first();
+        return view('test',['page'=>$pages]);
         // dd($pages);
-        echo "$pages->name $pages->description";
+        // echo "$pages->name $pages->description";
         // foreach ($pages as $page) {
         //     echo $page->name;
         // }
