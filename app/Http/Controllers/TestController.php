@@ -8,9 +8,13 @@ class TestController extends Controller
 {
     public function test1(){
         // echo 'test';
-        $pages = page::All();
-        dd($pages);
-        echo "hi";
+        $pages = page::where('id',1)->first();
+        // dd($pages);
+        echo "$pages->name $pages->description";
+        // foreach ($pages as $page) {
+        //     echo $page->name;
+        // }
+        // echo "hi";
 
     }
 }
