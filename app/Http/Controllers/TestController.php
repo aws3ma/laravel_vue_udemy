@@ -18,4 +18,7 @@ class TestController extends Controller
         // echo "hi";
 
     }
+    public function helloVue(){
+        return view('welcome');
+    }
 }

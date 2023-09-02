@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ContactUsController;
+use App\Http\Controllers\TestController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,3 +17,6 @@ use App\Http\Controllers\HomeController;
 
 Route::get('/',[HomeController::class, 'index']);
 Route::get('/page/{id}',[HomeController::class, 'page']);
+Route::get('/contact-us',[ContactUsController::class, 'index']);
+Route::post('/contact-us',[ContactUsController::class, 'form']);
+Route::get('/vue',[TestController::class, 'helloVue']);
