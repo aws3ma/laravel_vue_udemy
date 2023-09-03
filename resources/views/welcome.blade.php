@@ -7,7 +7,10 @@
     @vite('resources/js/app.js')
     <title>Vue in laravel</title>
 </head>
-<body id="app">
-    <example-component></example-component>
+<body>
+    <div id="app">
+
+        <example-component></example-component>
+    </div>
 </body>
 </html>

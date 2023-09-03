@@ -9,8 +9,9 @@
 <body>
     <h1>Hello, this is test</h1>
     <p>
-        <h2>{{$page->name}}</h2>
-        <h3> {{$page->description}} </h3>
+        {{-- <h2>{{$page->name}}</h2>
+        <h3> {{$page->description}} </h3> --}}
+        {{$input}}
     </p>
 </body>
 </html>

@@ -21,6 +21,9 @@
           <a class="nav-link" href="/page/{{$page->id}}"> {{$page->name}} </a>
         </li>
         @endforeach
+        <li class="nav-item">
+            <a class="nav-link" href="/admin/specials"> Add edit remove specials </a>
+          </li>
       </ul>
     </div>
 

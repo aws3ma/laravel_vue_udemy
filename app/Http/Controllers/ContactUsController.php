@@ -26,4 +26,12 @@ class ContactUsController extends Controller
         // dd($validatedData);
 
     }
+    public function formAjax(Request $request){
+        // $input = $request->all();
+        // Log::info($request);
+        // return view('test',["input"=>$input]);
+        // dd($input);
+        // echo "$request";
+        return response()->json($request, 200);
+    }
 }
