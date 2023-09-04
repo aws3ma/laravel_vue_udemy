@@ -33,26 +33,36 @@
     <div>
         <table class="table table-striped">
             <thead>
-              <tr>
-                <th scope="col">Name</th>
-                <th scope="col">Description</th>
-                <th scope="col">Was</th>
-                <th scope="col">Now</th>
-              </tr>
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Was</th>
+                    <th scope="col">Now</th>
+                    <th scope="col">Brand</th>
+                    <th scope="col">Actions</th>
+                </tr>
             </thead>
             <tbody>
                 @foreach ($specials as $special)
                     <tr>
-                <th scope="row">{{$special->name}}</th>
-                <td>{{$special->description}}</td>
-                <td>${{$special->was_price}}</td>
-                <td>${{$special->current_price}}</td>
-              </tr>
+                        <th scope="row">{{ $special->name }}</th>
+                        <td>{{ $special->description }}</td>
+                        <td>${{ $special->was_price }}</td>
+                        <td>${{ $special->current_price }}</td>
+                        <td>{{$special->brand}}</td>
+                        <td><a href="/admin/specials/{{ $special->id }}/edit" class="btn btn-sm btn-primary inline">Edit</a>
+                            <form action="/admin/specials/{{ $special->id }}" method="post" >
+                                @method('delete')
+                                @csrf
+                                <button class="btn btn-sm btn-danger" type="submit">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
                 @endforeach
 
             </tbody>
-          </table>
-          <a href="/admin/specials/create" class="btn btn-primary">Add new specials</a>
+        </table>
+        <a href="/admin/specials/create" class="btn btn-primary">Add new specials</a>
     </div>
 </body>
 

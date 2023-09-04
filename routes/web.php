@@ -29,5 +29,5 @@ Auth::routes();
 Route::group([
     'middleware'=>'auth'
 ], function(){
-    Route::apiResource('admin/specials',SpecialsController::class);
+    Route::resource('admin/specials',SpecialsController::class);
 });

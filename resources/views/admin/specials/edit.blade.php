@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Add special</title>
+    <title>Edit special</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
@@ -23,12 +23,13 @@
         <section class="m-4">
 
             <!--Section heading-->
-            <h2 class="h1-responsive font-weight-bold text-center my-4">Add special</h2>
+            <h2 class="h1-responsive font-weight-bold text-center my-4">Edit special N° {{$special->id}}</h2>
             <div class="row">
 
                 <!--Grid column-->
                 <div class="mb-md-0 mb-5">
-                    <form id="contact-form" name="contact-form" method="POST" action="/admin/specials">
+                    <form id="contact-form" name="contact-form" method="POST" action="/admin/specials/{{$special->id}}">
+                        @method('patch')
                         @csrf
                         <!--Grid row-->
                         <div class="row">
@@ -36,21 +37,21 @@
                             <!--Grid column-->
                             <div class="col-md-6">
                                 <div class="md-form mb-0">
-                                    <input type="text" id="name" name="name" class="form-control" required>
+                                    <input value="{{$special->name}}" type="text" id="name" name="name" class="form-control" required>
                                     <label for="name" class="">Name</label>
                                 </div>
                             </div>
                             <!--Grid column-->
                             <div class="col-md-3">
                                 <div class="md-form mb-0">
-                                    <input type="number" id="was_price" name="was_price" class="form-control" required>
+                                    <input value="{{$special->was_price}}" type="number" id="was_price" name="was_price" class="form-control" required>
                                     <label for="was_price" class="">Was price</label>
                                 </div>
                             </div>
                             <!--Grid column-->
                             <div class="col-md-3">
                                 <div class="md-form mb-0">
-                                    <input type="number" id="current_price" name="current_price" class="form-control"
+                                    <input value="{{$special->current_price}}" type="number" id="current_price" name="current_price" class="form-control"
                                         required>
                                     <label for="current_price" class="">Current Price</label>
                                 </div>
@@ -64,7 +65,7 @@
                             <div class="col-md-12">
 
                                 <div class="md-form">
-                                    <textarea type="text" id="description" name="description" rows="2" class="form-control md-textarea" required></textarea>
+                                    <textarea  type="text" id="description" name="description" rows="2" class="form-control md-textarea" required>{{$special->description}}</textarea>
                                     <label for="description">Description</label>
                                 </div>
 
@@ -73,17 +74,10 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="md-form mb-0">
-                                    <input type="text" id="brand" name="brand" class="form-control" required>
+                                    <input value="{{$special->brand}}" type="text" id="brand" name="brand" class="form-control" required>
                                     <label for="brand" class="">Brand</label>
                                 </div>
                             </div>
-                        </div>
-                        <!--Grid row-->
-                        <!--Grid row-->
-
-                        <!--Grid row-->
-                        <div class="row">
-
                         </div>
                         <!--Grid row-->
 
@@ -91,7 +85,7 @@
                         <div class="row">
 
                             <!--Grid column-->
-                            <button class="btn btn-primary" type="submit">Add special</button>
+                            <button class="btn btn-primary" type="submit">Edit special</button>
                         </div>
                         <!--Grid row-->
 
