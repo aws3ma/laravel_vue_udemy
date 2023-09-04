@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ContactUsController;
 use App\Http\Controllers\TestController;
 use App\Http\Controllers\SpecialsController;
+use App\Http\Controllers\UploadFileController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,7 +23,9 @@ Route::get('/contact-us',[ContactUsController::class, 'index']);
 Route::post('/contact-us',[ContactUsController::class, 'form']);
 Route::post('/contact-us/ajax',[ContactUsController::class, 'formAjax']);
 Route::get('/vue',[TestController::class, 'helloVue']);
-
+Route::get('/special/{id}',[HomeController::class, 'show']);
+Route::get('/upload',[UploadFileController::class, 'index']);
+Route::post('/upload',[UploadFileController::class, 'uploadFile']);
 Auth::routes();
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
